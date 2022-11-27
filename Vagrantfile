@@ -8,10 +8,9 @@ Vagrant.configure("2") do |config|
     hw6.vm.network "private_network", ip: "192.168.56.8"
     hw6.vm.network "forwarded_port", guest: 80, host: 8888
 
-    config.vm.disk :disk, size: "300MB", name: "HDD1"
-    config.vm.disk :disk, size: "300MB", name: "HDD2"
-    config.vm.disk :disk, size: "300MB", name: "HDD3"
-    config.vm.disk :disk, size: "300MB", name: "HDD4"
+    for idx in 1..4
+      config.vm.disk :disk, size: "300MB", name: "HDD#{idx}"
+    end
 
     hw6.vm.provider "virtualbox" do |vb|
       vb.name = "hw6"
