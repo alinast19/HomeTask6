@@ -18,6 +18,6 @@ Vagrant.configure("2") do |config|
       vb.memory = "1024"
     end
 
-    config.vm.provision "shell", run: "always", path: "script.sh"
+    config.vm.provision "shell", path: "script.sh"
   end
 end
